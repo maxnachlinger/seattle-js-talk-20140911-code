@@ -1,0 +1,21 @@
+{{> header}}
+<div>
+	<p>Locale: {{l8n.locale}}</p>
+
+	<p>Login: {{l8n.gettext "Log in"}}</p>
+
+	<p>Email: {{l8n.gettext "Email"}}</p>
+
+	<p>Password: {{l8n.gettext "Password"}}</p>
+
+	<p>Confirm Password: {{l8n.gettext "Confirm Password"}}</p>
+
+	<p>First Name: {{l8n.gettext "First Name"}}</p>
+
+	<p>Last Name: {{l8n.gettext "Last Name"}}</p>
+
+	{{#each l8n.locales}}
+		<p>{{code}} - {{name}}</p>
+	{{/each}}
+</div>
+{{> footer}}
