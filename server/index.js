@@ -14,35 +14,29 @@ var server = new Hapi.Server('0.0.0.0', process.env.PORT || config.port, {
 });
 
 server.route({
+	path: '/public/{path*}',
 	method: 'GET',
-	path: '/',
-	handler: function (request, reply) {
-		reply.view('index', {title: "Test App: " + request.plugins.l8n.gettext("Log in")});
+	handler: {
+		directory: {
+			path: './public',
+			listing: false,
+			index: false
+		}
 	}
 });
 
 server.route({
 	method: 'GET',
-	path: '/css/{path*}',
-	handler: {
-		directory: {
-			path: path.join(__dirname, '/public/css'),
-			lookupCompressed: true,
-			listing: false,
-			index: true
-		}
-	},
-	config: {
-		cache: {
-			expiresIn: 30 * 86400000 // 30 days
-		}
+	path: '/',
+	handler: function (request, reply) {
+		reply.view('index', {title: server.methods.gettext("Log in")});
 	}
 });
 
 server.pack.register([{
 	plugin: require('good')
 }, {
-	plugin: require('l8n-gettext').hapiJsPlugin,
+	plugin: require('l10n-gettext').hapiJsPlugin,
 	options: {
 		cookieName: '_locale',
 		poDirectory: path.join(__dirname, 'locales'),

@@ -1,21 +1,62 @@
 {{> header}}
+<script>
+	(function (win) {
+		var setCookie = function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+			if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+			var sExpires = "";
+			if(sDomain === 'localhost')
+				sDomain = null;
+
+			if (vEnd) {
+				switch (vEnd.constructor) {
+					case Number:
+						sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+						break;
+					case String:
+						sExpires = "; expires=" + vEnd;
+						break;
+					case Date:
+						sExpires = "; expires=" + vEnd.toUTCString();
+						break;
+				}
+			}
+			document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires +
+					(sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") +
+					(bSecure ? "; secure" : "");
+			return true;
+		};
+
+		win.onload = function () {
+			var selectPicker = win.document.getElementById('languageSelect');
+			selectPicker.addEventListener('change', function (event) {
+				var cookieName = "_locale";
+				var language = event.target.value || 'en';
+
+				setCookie(cookieName, language);
+				win.document.location.reload(true);
+			});
+		};
+	})(window);
+</script>
 <div>
-	<p>Locale: {{l8n.locale}}</p>
+	<select id="languageSelect" class="form-element">
+		{{#each l10n.locales}}
+		<option value="{{code}}"{{#if selected}} selected{{/if}}>{{name}}</option>
+		{{/each}}
+	</select>
 
-	<p>Login: {{l8n.gettext "Log in"}}</p>
+	<p>{{l10n.text.locale}}</p>
 
-	<p>Email: {{l8n.gettext "Email"}}</p>
+	<p>{{l10n.text.gettext "Log in"}}</p>
 
-	<p>Password: {{l8n.gettext "Password"}}</p>
+	<p>{{l10n.text.gettext "Email"}}</p>
 
-	<p>Confirm Password: {{l8n.gettext "Confirm Password"}}</p>
+	<p>{{l10n.text.gettext "Password"}}</p>
 
-	<p>First Name: {{l8n.gettext "First Name"}}</p>
+	<p>{{l10n.text.gettext "Confirm Password"}}</p>
 
-	<p>Last Name: {{l8n.gettext "Last Name"}}</p>
+	<p>{{l10n.text.gettext "First Name"}}</p>
 
-	{{#each l8n.locales}}
-		<p>{{code}} - {{name}}</p>
-	{{/each}}
+	<p>{{l10n.text.gettext "Last Name"}}</p>
 </div>
 {{> footer}}
