@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ./index.js:31
+#: ./views/templates/index.hbs:1
+msgid "Register"
+msgstr "Register"
+
+#: ./views/templates/index.hbs:2
+msgid "First Name"
+msgstr "First Name"
+
+#: ./views/templates/index.hbs:3
+msgid "Last Name"
+msgstr "Last Name"
+
+#: ./views/templates/index.hbs:4
+msgid "Email"
+msgstr "Email"
+
+#: ./views/templates/index.hbs:5
+msgid "Password"
+msgstr "Password"
+
+#: ./views/templates/index.hbs:6
+msgid "Confirm Password"
+msgstr "Confirm Password"
