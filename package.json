@@ -8,6 +8,7 @@
 		"good": "^2.2.0",
 		"handlebars": "^2.0.0-beta.1",
 		"hapi": "^6.2.0",
+		"hoek": "^2.4.1",
 		"joi": "^4.6.2"
 	},
 	"devDependencies": {

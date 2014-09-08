@@ -57,12 +57,12 @@ server.pack.register([
 		plugin: require('good')
 	},
 	{
-		plugin: require('../../'),
+		plugin: require('hapi-l10n-gettext'),
 		options: {
 			cookieName: '_locale',
 			l10nDirectory: path.resolve(__dirname, 'locales'),
 			defaultLocale: 'en',
-			excludeRoutes: [assetRoute, localeSetRoute],
+			excludedRoutes: [assetRoute, localeSetRoute],
 			includedRoutes: routes
 		}
 	}
