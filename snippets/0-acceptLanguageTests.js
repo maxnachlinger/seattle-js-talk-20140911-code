@@ -13,7 +13,7 @@ function getHeaderLocale(headerValue, supportedLocales) {
 		if (pref1.q < pref2.q) return 1;
 		if (pref1.q > pref2.q) return -1;
 		return 0;
-	}).filter(function (pref) { // limit to supported languages
+	}).filter(function (pref) { // omit non-supported languages
 		return ~supportedLocales.indexOf(pref.locale);
 	}).shift(); // chose the best available
 
