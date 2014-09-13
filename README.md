@@ -1,4 +1,4 @@
-Silly [HapiJS](http://hapijs.com/) / [Handlebars](http://handlebarsjs.com/)s app to accompany my rambling l10n talk at SeattleJS.
+Silly [HapiJS](http://hapijs.com/) / [Handlebars](http://handlebarsjs.com/) app to accompany my rambling l10n talk at SeattleJS.
 
 ###Installation:
 ```
