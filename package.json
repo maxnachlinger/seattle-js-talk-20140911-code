@@ -5,18 +5,18 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"good": "^2.2.0",
-		"handlebars": "^2.0.0-beta.1",
-		"hapi": "^6.2.0",
-		"hapi-l10n-gettext": "0.0.6",
-		"hoek": "^2.4.1",
-		"joi": "^4.6.2"
+		"good": "^7.1.0",
+		"handlebars": "^4.0.6",
+		"hapi": "^16.0.1",
+		"hapi-l10n-gettext": "0.0.8",
+		"hoek": "^4.1.0",
+		"joi": "^10.0.5"
 	},
 	"devDependencies": {
-		"gettext-parser": "^0.2.0",
-		"grunt": "^0.4.5",
-		"grunt-jsxgettext": "0.0.3",
+		"gettext-parser": "^1.2.1",
+		"grunt": "^1.0.1",
+		"grunt-jsxgettext": "1.0.0",
 		"node-pseudo-l10n": "0.0.2",
-		"tape": "^2.14.0"
+		"tape": "^4.6.3"
 	}
 }
